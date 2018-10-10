@@ -13,14 +13,15 @@
 // Instruct the framework
 //on how to generate a response
 
-const getcomment = (request, response) => {
+//function that gets a specific  driver 
+const getDriver = (request, response) => {
     console.log(request.params)
     const id = request.params.id
     response.send(`you are getting the ${id}`)
 };
-
-const fetchComments = (request, response) => { 
+//function that gets a list pf all DRIVERS 
+const fetchDrivers = (request, response) => { 
     response.send(`You are getting your pins`)
 };
 
-module.exports = {getcomment , fetchComments};
+module.exports =  {getDriver , fetchDrivers};

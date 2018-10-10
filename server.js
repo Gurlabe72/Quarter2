@@ -14,11 +14,15 @@ const hazardRoutes = require('./routes/hazards.routes');
 
 const commentsRoutes = require('./routes/comments.routes')
 
+//and drivers 
+
+const driversRoutes = require('./routes/drivers.routes')
 
 //===============Lets set up routes==========================//
 
 app.use('/hazards' , hazardRoutes) 
 app.use('/comments' , commentsRoutes)
+app.use('/comments' , driversRoutes )
 //=============Create a route that GETs a collection of Pins=========// 
 
 app.listen(port,console.log(`you are in port ${port}`));

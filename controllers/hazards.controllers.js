@@ -1,5 +1,4 @@
 // In Express, your "controllers" are the functions you pass as the route handlers:
-
 // router.get("/", function(req, res, next) {
 //   req.query         // <-- get querystring values such as ?foo=bar
 //   req.params        // <-- get path params such as the "34" in /posts/34/comments
@@ -14,12 +13,14 @@
 // Coordinate with other parts of the app (such as models, external services etc...)
 // Instruct the framework on how to generate a response
 
+//Function that gets a specific HAZARD for you 
 const getHazard = (request, response) => {
     console.log(request.params)
     const id = request.params.id
     response.send(`you are getting the ${id}`)
 };
 
+//function that fetches a list of all the HAZARDS 
 const fetchHazards = (request, response) => { 
     response.send(`You are getting your pins`)
 };
