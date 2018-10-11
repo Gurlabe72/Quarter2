@@ -23,9 +23,18 @@ router.get(
 //'/' means we are starting from the beginnging of the url 
 
 //================POST================//
-
+router.post(
+    '/',
+    ctrl.createAccident
+)
 //================PUT================//
-
+router.put(
+    '/',
+    ctrl.updateAccident
+)
 //================DELETE================//
-
+router.delete(
+    '/',
+    ctrl.deleteAccident
+)
 module.exports = router;

@@ -1,10 +1,10 @@
 exports.seed = function(knex, Promise) {
     // Deletes ALL existing entries
-    return knex('accidents')
+    return knex('hazards_accidents')
       .del()
       .then(function() {
         // Inserts seed entries
-        return knex('accidents').insert([
+        return knex('hazards_accidents').insert([
           {
               id:1,
               hazards_id:201 ,
@@ -26,9 +26,5 @@ exports.seed = function(knex, Promise) {
             accidents_id:104, 
         }])
     })
-    .then(() =>
-      knex.raw(
-        `SELECT setval('"users_id_seq"', (SELECT MAX("id") FROM "users"))`
-      )
-    )
+ 
 }

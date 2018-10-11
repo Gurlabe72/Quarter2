@@ -20,5 +20,16 @@ const getAccident = (request, response) => {
 const fetchAccidents = (request, response) => { 
     response.send(`You are getting your accidents`);
 };
-
-module.exports = {getAccident , fetchAccidents};
+//function that creates an accident report
+const createAccident = (request, response) => {
+    response.send(`You have created and accident report`)
+};
+//function that updates an accident report 
+const updateAccident = ( request, response) => {
+    response.send(`You have updated an accident report`)
+};
+//function that deletes an accident report
+const deleteAccident = (request, response) => {
+    response.send(`You have deleted an accident report`)
+}
+module.exports = {getAccident , fetchAccidents, createAccident, updateAccident, deleteAccident};

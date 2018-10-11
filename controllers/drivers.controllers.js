@@ -5,14 +5,11 @@
 //   res.render(...)   // <-- render a template
 //   res.json(...)     // <-- render a JSON response
 //}
-
 // Controllers typically:
-
 // Access data from the request
 // Coordinate with other parts of the app (such as models, external services etc...)
 // Instruct the framework
 //on how to generate a response
-
 //function that gets a specific  driver 
 const getDriver = (request, response) => {
     console.log(request.params)
@@ -23,5 +20,16 @@ const getDriver = (request, response) => {
 const fetchDrivers = (request, response) => { 
     response.send(`You are getting your drivers`)
 };
-
-module.exports =  {getDriver , fetchDrivers};
+//function that creates a driver 
+const createDriver = (resquest, response) => {
+    response.send(`You have created a driver`)
+};
+//function that updates a driver 
+const updateDriver = (request, response) => {
+    response.send(`You have updated a driver `)
+}
+//function that deletes a driver
+const  deleteDriver = (request, response) => {
+    response.send(`You have deleted a driver`)
+}
+module.exports =  {getDriver , fetchDrivers, createDriver , updateDriver, deleteDriver};

@@ -7,29 +7,24 @@ exports.seed = function(knex, Promise) {
         return knex('accidents').insert([
           {
             id:101,
-            hazard_id:101,
-            comment: 'this is my accident'
+            hazards_id:201,
+            comment: 'tis is my comment'
           },
           {
             id:102,
-            hazard_id:102,
-            accident: 'this is my accident'
+            hazards_id:202,
+            comment: 'this is my comment'
           },
           {
             id:103,
-            hazard_id:103,
-            accident: 'this is my accident'
+            hazards_id:203,
+            comment: 'this is my comment'
           },
           {
             id:104,
-            hazard_id:104,
-            accident: 'this is my accident'
+            hazards_id:204,
+            comment: 'this is my comment'
           }
         ])
       })
-      .then(() =>
-        knex.raw(
-          `SELECT setval('"users_id_seq"', (SELECT MAX("id") FROM "users"))`
-        )
-      )
   }
