@@ -1,8 +1,14 @@
-//activate express 
 const express = require('express')
-const app = express();
-//assign a port number to access local host
-const port = 3333;
+const app = express()
+const morgan = require('morgan')
+const bodyParser = require('body-parser')
+const port = process.env.PORT || 3000
+const cors = require('cors')
+
+if (process.env.NODE_ENV !== 'test') app.use(morgan('dev'))
+app.use(bodyParser.json())
+app.use(cors())
+
 
 //This is how we are going to grab the 'hazardRoutes' function that we created
 //in the ROUTES directory under hazards.controllers.js you put the path to get from
