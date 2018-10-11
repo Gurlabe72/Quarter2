@@ -7,18 +7,26 @@ const router = express.Router();
 const ctrl = require('../controllers/drivers.controllers');
 
 //express.router is node module that allows you to route APIs to
-//a local host and packages them.  
+//a local host and packages them.
 
+//================FETCH================//
 router.get(
     '/' ,
+    ctrl.fetchDrivers 
+);
+//this route above gets the full list of comments 
+//================GET================//
+router.get(
+    '/:id' ,
     ctrl.getDriver
 );
 //The route above gets a specific driver for you 
 
 //'/' means we are starting from the beginnging of the url 
-router.get(
-    '/:id' ,
-    ctrl.fetchDrivers 
-);
-//this route above gets the full list of comments  
+ //================POST================//
+
+//================PUT================//
+
+//================DELETE================//
+
 module.exports = router;

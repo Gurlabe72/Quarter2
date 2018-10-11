@@ -6,13 +6,11 @@
 //   res.render(...)   // <-- render a template
 //   res.json(...)     // <-- render a JSON response
 //}
-
 // Controllers typically:
-
 // Access data from the request
 // Coordinate with other parts of the app (such as models, external services etc...)
 // Instruct the framework on how to generate a response
-
+const model = require('./models/model')
 //Function that gets a specific HAZARD for you 
 const getHazard = (request, response) => {
     console.log(request.params)
@@ -22,7 +20,7 @@ const getHazard = (request, response) => {
 
 //function that fetches a list of all the HAZARDS 
 const fetchHazards = (request, response) => { 
-    response.send(`You are getting your pins`)
+    response.send(`You are getting your hazards`)
 };
 
 module.exports = {getHazard , fetchHazards};

@@ -7,7 +7,7 @@ const router = express.Router();
 const ctrl = require('../controllers/hazards.controllers');
 
 
-
+//================FETCH================//
 router.get(
     '/' , 
     ctrl.fetchHazards
@@ -15,11 +15,17 @@ router.get(
 //The route above gets a specific hazard. 
 
 //'/' means we are starting from the beginnging of the url 
+//================GET================//
 router.get( 
     '/:id' , 
     ctrl.getHazard  
 );
  //this route above gets the full list of hazards  
 
+//================POST================//
+
+//================PUT================//
+
+//================DELETE================//
 
 module.exports = router;

@@ -21,7 +21,7 @@ const getDriver = (request, response) => {
 };
 //function that gets a list pf all DRIVERS 
 const fetchDrivers = (request, response) => { 
-    response.send(`You are getting your pins`)
+    response.send(`You are getting your drivers`)
 };
 
 module.exports =  {getDriver , fetchDrivers};

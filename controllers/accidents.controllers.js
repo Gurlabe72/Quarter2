@@ -5,24 +5,20 @@
 //   res.render(...)   // <-- render a template
 //   res.json(...)     // <-- render a JSON response
 //}
-
 // Controllers typically:
-
 // Access data from the request
 // Coordinate with other parts of the app (such as models, external services etc...)
 // Instruct the framework
 //on how to generate a response
-
-
-//a function that gets a specific comment 
-const getComment = (request, response) => {
+//a function that gets a specific Accident
+const getAccident = (request, response) => {
     console.log(request.params)
     const id = request.params.id
     response.send(`you are getting the ${id}`)
 };
-//function that gets a list of all COMMENTS 
-const fetchComments = (request, response) => { 
-    response.send(`You are getting your pins`)
+//function that gets a list of all Accident 
+const fetchAccidents = (request, response) => { 
+    response.send(`You are getting your accidents`);
 };
 
-module.exports = {getComment , fetchComments};
+module.exports = {getAccident , fetchAccidents};
