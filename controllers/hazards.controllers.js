@@ -10,27 +10,43 @@
 // Access data from the request
 // Coordinate with other parts of the app (such as models, external services etc...)
 // Instruct the framework on how to generate a response
-const model = require('../models/model')
-//Function that gets a specific HAZARD for you 
+const model = require('../models/02_hazards.models')
+
+//function that creates a hazard
 const getHazard = (request, response) => {
     console.log(request.params)
     const id = request.params.id
+    let promise = model.fetchHazards
     response.send(`you are getting the ${id}`)
 };
-//function that fetches a list of all the HAZARDS 
-const fetchHazards = (request, response) => { 
-    response.send(`You are getting your hazards`)
+
+const fetchHazards = (request, response) => {
+        let payload = request.body 
+        let promise = model.fetchHazards(payload);
+        promise.then(result => {
+        console.log(result)
+        return response.status(200).json(result); 
+        })
+        .catch(error =>{
+            console.log(error)
+        }) 
+}
+//Function that gets a specific HAZARD for you 
+
+
+
+// //function that updates a current hazard 
+// const updateHazard = (request, response) => {
+//     response.send(`You are updating a Hazard`)
+// }
+// //function that deletes a hazard. 
+// const deleteHazard = (request, response) => {
+//     response.send(`You are deleting a Hazard`)
+// }
+module.exports = {
+    getHazard, 
+    fetchHazards, 
+    // createHazard, 
+    // updateHazard, 
+    // deleteHazard
 };
-//function that creates a hazard
-const createHazard = (request, response) => { 
-    response.send(`You are posting a new Hazard`)
-}
-//function that updates a current hazard 
-const updateHazard = (request, response) => {
-    response.send(`You are updating a Hazard`)
-}
-//function that deletes a hazard. 
-const deleteHazard = (request, response) => {
-    response.send(`You are deleting a Hazard`)
-}
-module.exports = {getHazard , fetchHazards, createHazard, updateHazard, deleteHazard};

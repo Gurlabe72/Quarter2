@@ -50,8 +50,13 @@ const deleteAccident = () => {
     ? { error: 'error retreiving', status: 404 }
     : result
 })
-
 };
-module.exports = {
-  getAllAccidents, fetchAccidents, createAccident, updateAccident, deleteAccident
-}  
+
+
+
+
+
+
+// module.exports = {
+//   getAllAccidents, fetchAccidents, createAccident, updateAccident, deleteAccident
+// }  

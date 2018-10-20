@@ -57,10 +57,10 @@ const deleteaccident = () => {
 
 
 
-module.exports = {
-  getAllAccidents,
-  fetchAccidents,
-  createAccident,
-  updateAccident,
-  deleteaccident
-}
+// module.exports = {
+//   getAllAccidents,
+//   fetchAccidents,
+//   createAccident,
+//   updateAccident,
+//   deleteaccident
+// }

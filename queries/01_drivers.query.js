@@ -1,19 +1,13 @@
 const knex = require('./db')
-const driversQuery = require('../queries/02_hazards.models')
 
 
-const getAllDrivers = () => {
+// const getAllDrivers = () => {
+//   return knex('drivers')
+// }
+
+
+const fetchDrivers = () => {
   return knex('drivers')
-}
-
-
-
-
-
-
-
-const fetchDriver = () => {
-  let drivers = driversQuery.fetchDriver()
 };
 
 
@@ -22,9 +16,9 @@ const fetchDriver = () => {
 
 
 
-const createDriver = () => {
-  let drivers = driversQuery.createDriver()
-  };
+// const createDriver = () => {
+//   let drivers = driversQuery.createDriver()
+//   };
 
 
 
@@ -32,9 +26,9 @@ const createDriver = () => {
 
 
 
-  const updateDriver = () => {
-  let drivers = driversQuery.updateDriver()
-}
+//   const updateDriver = () => {
+//   let drivers = driversQuery.updateDriver()
+// }
 
 
 
@@ -42,18 +36,18 @@ const createDriver = () => {
 
 
 
-const deleteDriver = () => {
-  let drivers = driversQuery.deleteDriver()
-}
+// const deleteDriver = () => {
+//   let drivers = driversQuery.deleteDriver()
+// }
  
 
 
 
 
 module.exports = {
-  getAllDrivers,
-  fetchDriver,
-  createDriver,
-  updateDriver,
-  deleteDriver
+//   getAllDrivers,
+  fetchDrivers
+//   createDriver,
+//   updateDriver,
+//   deleteDriver
 }

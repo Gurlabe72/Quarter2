@@ -4,7 +4,8 @@ const express = require('express');
 const router = express.Router();
 //create a 'ctrl' varaible that lets you access a function that 
 //we made in hazards.controllers.js 
-const ctrl = require('../controllers/hazards.controllers');
+const ctrl = require('../controllers/hazards.controllers')
+console.log(ctrl)
 //================FETCH================//
 router.get(
     '/' , 
@@ -18,19 +19,19 @@ router.get(
     ctrl.getHazard  
 );
  //this route above gets the full list of hazards  
-//================POST================//
-router.post(
-    '/',
-    ctrl.createHazard
-)
+// //================POST================//
+// router.post(
+//     '/',
+//     ctrl.createHazard
+// )
 //================PUT================//
-router.put(
-    '/',
-    ctrl.updateHazard   
-)
-//================DELETE================//
-router.delete(
-    '/',
-    ctrl.deleteHazard
-)
+// router.put(
+//     '/',
+//     ctrl.updateHazard   
+// )
+// //================DELETE================//
+// router.delete(
+//     '/',
+//     ctrl.deleteHazard
+// )
 module.exports = router;

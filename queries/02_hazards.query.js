@@ -1,8 +1,10 @@
 const knex = require('./db')
-const hazardsQuery = require('../queries/02_hazards.models')
 
+const getHazard = () => {
+  return knex('hazards')
+}
 
-const getAllHazards = () => {
+const fetchHazards = () => {
   return knex('hazards')
 }
 
@@ -11,45 +13,11 @@ const getAllHazards = () => {
 
 
 
-
-const fetchHazards = () => {
-  let hazards = hazardsQuery.fetchHazards()
-};
-
-
-
-
-
-
-
-const createHazard = () => {
-  let hazards = hazardsQuery.createHazard()
-  };
-
-
-
-
-
-
-
-  const updateHazard = () => {
-  let hazards = hazardsQuery.createHazard()
-}
-
-
-
-
-
-
-
-const deleteHazard = () => {
-  let hazards = hazardsQuery.deleteDriver()
-}
  
 module.exports = {
-  getAllHazards,
+  getHazard,
   fetchHazards,
-  createHazard,
-  updateHazard,
-  deleteHazard
+  // createHazard,
+  // updateHazard,
+  // deleteHazard
 }

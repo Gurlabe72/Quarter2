@@ -1,61 +1,59 @@
 const driversQuery = require('../queries/01_drivers.query')
 
+// const getAllDrivers = () => {
+//   drivers = driversQuery.getAllDrivers()
 
-
-const getAllDrivers = () => {
-  drivers = driversQuery.getAllDrivers()
-
-  return drivers.then(result => {
-    return result.length < 1
-      ? { error: 'error retreiving drivers', status: 404 }
-      : result
-  })
-};
+//   return drivers.then(result => {
+//     return result.length < 1
+//       ? { error: 'error retreiving drivers', status: 404 }
+//       : result
+//   })
+// };
 
 const fetchDrivers = () => {
-    drivers = driversQuery.fetchDrivers()
+    let drivers = driversQuery.fetchDrivers()
 
     return drivers.then(result => {
         return result.length < 1
-        ? { error: 'error retreiving ', status: 404 }
+        ? { error: 'error retreiving drivers', status: 404 }
         : result
     })
 };
 
-const createDriver = () => {
-  drivers = driversQuery.createDriver()
+// const createDriver = () => {
+//   drivers = driversQuery.createDriver()
 
-  return drivers.then(result => {
-      return result.length < 1
-      ? { error: 'error retreiving', status: 404 }
-      : result
-  })
-} ;
+//   return drivers.then(result => {
+//       return result.length < 1
+//       ? { error: 'error retreiving', status: 404 }
+//       : result
+//   })
+// } ;
 
-const updateDriver = () => {
-  drivers = driversQuery.updateDriver()
+// const updateDriver = () => {
+//   drivers = driversQuery.updateDriver()
 
-  return drivers.then(result => {
-      return result.length < 1
-      ? { error: 'error retreiving', status: 404 }
-      : result
-  })
-};
+//   return drivers.then(result => {
+//       return result.length < 1
+//       ? { error: 'error retreiving', status: 404 }
+//       : result
+//   })
+// };
 
-const deleteDriver = () => {
-    drivers = driversQuery.deleteDriver()
+// const deleteDriver = () => {
+//     drivers = driversQuery.deleteDriver()
   
-    return drivers.then(result => {
-        return result.length < 1
-        ? { error: 'error retreiving', status: 404 }
-        : result
-    })
-  };
+//     return drivers.then(result => {
+//         return result.length < 1
+//         ? { error: 'error retreiving', status: 404 }
+//         : result
+//     })
+//   };
 
 module.exports = {
-  getAllDrivers, 
-  fetchDrivers, 
-  createDriver, 
-  updateDriver, 
-  deleteDriver
+  // getAllDrivers, 
+  fetchDrivers
+  // createDriver, 
+  // updateDriver, 
+  // deleteDriver
 }  

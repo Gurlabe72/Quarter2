@@ -1,3 +1,4 @@
+
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
@@ -12,12 +13,14 @@ app.use(cors())
 //this page './' and your PATH to get from there to that speciic directory. 
 const hazardRoutes = require('./routes/hazards.routes');
 // Do The same for comments 
+
 const accidentsRoutes = require('./routes/accidents.routes')
 //and drivers 
 const driversRoutes = require('./routes/drivers.routes')
+
 //===============Lets set up routes==========================//
 app.use('/hazards' , hazardRoutes)
-app.use('/accidents' , accidentsRoutes)
-app.use('/drivers' , driversRoutes)
+// app.use('/accidents' , accidentsRoutes)
+ app.use('/drivers' , driversRoutes)
 //=============Create a route that GETs a collection of Pins=========// 
 app.listen(port,console.log(`you are in port ${port}`));

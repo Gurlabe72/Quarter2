@@ -37,4 +37,4 @@ router.delete(
     '/',
     ctrl.deleteAccident
 )
-module.exports = router;
+// module.exports = router;
