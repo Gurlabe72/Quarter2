@@ -3,35 +3,35 @@
 const express = require('express'); 
 const router = express.Router();
 //create a 'ctrl' varaible that lets you access a function that 
-//we made in hazards.controllers.js 
-const ctrl = require('../controllers/hazards.controllers')
+//we made in Hazards_Accidents.controllers.js 
+const ctrl = require('../controllers/hazards_accidents.controllers')
 console.log(ctrl)
 //================FETCH================//
 router.get(
     '/' , 
-    ctrl.fetchHazards
+    ctrl.fetchHazards_accidents
 );
-//The route above gets a specific hazards. 
+//The route above gets a specific Hazards_Accidents. 
 //'/' means we are starting from the beginnging of the url 
 //================GET================//
 // router.get( 
 //     '/:id' , 
-//     ctrl.getHazards  
+//     ctrl.getHazards_accidents  
 // );
- //this route above gets the full list of hazards 
+ //this route above gets the full list of Hazards_Accidents 
 // //================POST================//
 // router.post(
 //     '/',
-//     ctrl.createHazards
+//     ctrl.createHazards_accidents
 // )
 //================PUT================//
 // router.put(
 //     '/',
-//     ctrl.updateHazards   
+//     ctrl.updateHazards_accidents   
 // )
 // //================DELETE================//
 // router.delete(
 //     '/',
-//     ctrl.deleteHazards
+//     ctrl.deleteHazards_accidents
 // )
 module.exports = router;

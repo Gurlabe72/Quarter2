@@ -1,22 +1,20 @@
 const knex = require('./db')
 
-const getHazard = () => {
-  return knex('hazards')
-}
-
 const fetchHazards = () => {
   return knex('hazards')
 }
 
-
+// const getHazard = () => {
+//   return knex('hazards')
+// }
 
 
 
 
  
 module.exports = {
-  getHazard,
-  fetchHazards,
+  fetchHazards
+  // getHazard,
   // createHazard,
   // updateHazard,
   // deleteHazard

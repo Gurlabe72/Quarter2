@@ -22,7 +22,14 @@ const fetchDrivers = (request, response) => {
     promise.catch(error => {
       next(error)
     })
-};
+  };
+  //   const getDriver = (request, response) => {
+  //     console.log(request.params)
+  //     const id = request.params.id
+  //     let promise = model.fetchdrivers
+  //     response.send(`you are getting the ${id}`)
+  // };
+  
 
 // //function that gets a specific  driver 
 // const getDriver = (request, response) => {
@@ -42,8 +49,10 @@ const fetchDrivers = (request, response) => {
 // const  deleteDriver = (request, response) => {
 //     response.send(`You have deleted a driver`)
 // }
-module.exports =  {
-    // getDriver 
-    fetchDrivers
-    // createDriver , updateDriver, deleteDriver
+module.exports={
+     fetchDrivers
+     // getDriver, 
+    // createDriver, 
+    //updateDriver, 
+    //deleteDriver
 };

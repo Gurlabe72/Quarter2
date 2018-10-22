@@ -10,26 +10,40 @@
 // Coordinate with other parts of the app (such as models, external services etc...)
 // Instruct the framework
 //on how to generate a response
-//a function that gets a specific Accident
-const getAccident = (request, response) => {
-    console.log(request.params)
-    const id = request.params.id
-    response.send(`you are getting the ${id}`)
-};
+const model = require('../models/03_accidents.models');
 //function that gets a list of all Accident 
 const fetchAccidents = (request, response) => { 
-    response.send(`You are getting your accidents`);
+  let payload = request.body 
+  let promise = model.fetchAccidents(payload);
+  promise.then(result => {
+  console.log(result)
+  return response.status(200).json(result); 
+  })
+  .catch(error =>{
+      console.log(error)
+  })
 };
-//function that creates an accident report
-const createAccident = (request, response) => {
-    response.send(`You have created and accident report`)
+// const getAccident = (request, response) => {
+//     console.log(request.params)
+//     const id = request.params.id
+//     response.send(`you are getting the ${id}`)
+// };
+// //function that creates an accident report
+// const createAccident = (request, response) => {
+//     response.send(`You have created and accident report`)
+// };
+// //function that updates an accident report 
+// const updateAccident = ( request, response) => {
+//     response.send(`You have updated an accident report`)
+// };
+// //function that deletes an accident report
+// const deleteAccident = (request, response) => {
+//     response.send(`You have deleted an accident report`)
+// }
+module.exports = {
+    fetchAccidents, 
+    // getAccident, 
+    // createAccident, 
+    // updateAccident, 
+    // deleteAccident
 };
-//function that updates an accident report 
-const updateAccident = ( request, response) => {
-    response.send(`You have updated an accident report`)
-};
-//function that deletes an accident report
-const deleteAccident = (request, response) => {
-    response.send(`You have deleted an accident report`)
-}
-module.exports = {getAccident , fetchAccidents, createAccident, updateAccident, deleteAccident};
