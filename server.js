@@ -14,14 +14,14 @@ app.use(cors())
 const driversRoutes = require('./routes/drivers.routes')
 const hazardRoutes = require('./routes/hazards.routes');
 const accidentsRoutes = require('./routes/accidents.routes')
-const hazards_accidentsRoutes = require('./routes/hazards_accidents.routes')
+
 
 
 //===============Lets set up routes==========================//
 app.use('/drivers' , driversRoutes)
 app.use('/hazards' , hazardRoutes)
 app.use('/accidents' , accidentsRoutes)
-app.use('/hazards_accidents' , hazards_accidentsRoutes)
+
 
 //=============Create a route that GETs a collection of Pins=========// 
 app.listen(port,console.log(`you are in port ${port}`));
