@@ -1,5 +1,5 @@
 const accidentsQuery = require('../queries/03_accidents.query')
-
+//=================================FETCH=================================/
 const fetchAccidents = () => {
   let accidents = accidentsQuery.fetchAccidents()
 
@@ -7,9 +7,9 @@ const fetchAccidents = () => {
       return result.length < 1
       ? { error: 'error retreiving accidents', status: 404 }
       : result
-  })``
+  })
 };
-
+//=================================FETCH=================================/
 // const getAccident= () => {
 //   hazards = hazardsQuery.getAccident()
 
@@ -19,7 +19,7 @@ const fetchAccidents = () => {
 //       : result
 //   }) 
 // }
-
+//=================================FETCH=================================/
 // const createAccident = () => {
 //   accidents = accidentsQuery.createAccident()
 
@@ -30,26 +30,6 @@ const fetchAccidents = () => {
 //   })
 // } ;
 
-// const updateAccident = () => {
-//   accidents = accidentsQuery.updateAccident()
-
-//   return accidents.then(result => {
-//       return result.length < 1
-//       ? { error: 'error retreiving', status: 404 }
-//       : result
-//   })
-// };
-
-// const deleteAccident = () => {
-//   accidents = accidentQuery.deleteAccident()
-
-//   return hazards.then(result => {
-//     return result.length < 1
-//     ? { error: 'error retreiving', status: 404 }
-//     : result
-// })
-// };
-
 
 
 
@@ -59,6 +39,4 @@ const fetchAccidents = () => {
 fetchAccidents
 //getAccident
 //createAccident, 
-//updateAccident, 
-//deleteAccident
 }  

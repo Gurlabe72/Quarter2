@@ -13,6 +13,4 @@ module.exports = {
 fetchAccidents
 //   getAccident,
 //   createAccident,
-//   updateAccident,
-//   deleteaccident
  }

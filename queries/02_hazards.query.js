@@ -16,6 +16,5 @@ module.exports = {
   fetchHazards
   // getHazard,
   // createHazard,
-  // updateHazard,
-  // deleteHazard
+
 }

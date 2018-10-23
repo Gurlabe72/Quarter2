@@ -1,5 +1,5 @@
 const hazardsQuery = require('../queries/02_hazards.query')
-
+//=================================FETCH=================================/
 const fetchHazards = () => {
     hazards = hazardsQuery.fetchHazards()
 
@@ -9,6 +9,7 @@ const fetchHazards = () => {
         : result
     })
 };
+//=================================GET=================================/
 // const getHazard = () => {
 //     hazards = hazardsQuery.getHazard()
 
@@ -18,6 +19,7 @@ const fetchHazards = () => {
 //         : result
 //     }) 
 // }
+//=================================CREATE=================================/
 // const createHazard = () => {
 //   hazards = hazardsQuery.createHazard()
 
@@ -28,24 +30,6 @@ const fetchHazards = () => {
 //   })
 // } ;
 
-// const updateHazard = () => {
-//   hazards = hazardsQuery.updateHazard()
-
-//   return hazards.then(result => {
-//       return result.length < 1
-//       ? { error: 'error retreiving', status: 404 }
-//       : result
-//   })
-// };
-
-// const deleteHazard = () => {
-//   hazards = deleteQuery.deleteHazard()
-
-//   return hazards.then(result => {
-//       return result.length < 1
-//       ? { error: 'error retreiving', status: 404 }
-//       : result
-//   })
 
 
 
@@ -53,6 +37,4 @@ module.exports = {
    fetchHazards
 //   getHazard,
 //   createHazard, 
-//   updateHazard, 
-//   deleteHazard
 }  

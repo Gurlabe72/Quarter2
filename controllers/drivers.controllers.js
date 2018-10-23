@@ -32,27 +32,33 @@ const fetchDrivers = (request, response) => {
   
 
 // //function that gets a specific  driver 
-// const getDriver = (request, response) => {
-//     console.log(request.params)
-//     const id = request.params.id
-//     response.send(`you are getting the ${id}`)
-// };
+const getDriver = (request, response, next) => {
+  let {id} = request.params;
+
+  let promise = model.getDriver(id)
+
+  promise.then(result => {
+    return result.error ? next(result) : response.status(200).json(result)
+  })
+  promise.catch(error => {
+    next(error)
+  })
+};
 // //function that creates a driver 
-// const createDriver = (resquest, response) => {
-//     response.send(`You have created a driver`)
-// };
-// //function that updates a driver 
-// const updateDriver = (request, response) => {
-//     response.send(`You have updated a driver `)
-// }
-// //function that deletes a driver
-// const  deleteDriver = (request, response) => {
-//     response.send(`You have deleted a driver`)
-// }
+const createDriver = (request, response, next) => {
+  let {body} = request.body;
+  let promise = model.createDriver(body)
+
+  promise.then(result => {
+    return result.error ? next(result) : response.status(200).json(result)
+  })
+  promise.catch(error => {
+    next(error)
+  })
+};
+
 module.exports={
-     fetchDrivers
-     // getDriver, 
-    // createDriver, 
-    //updateDriver, 
-    //deleteDriver
+    fetchDrivers,
+    getDriver, 
+    createDriver 
 };

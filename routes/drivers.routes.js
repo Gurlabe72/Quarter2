@@ -12,25 +12,23 @@ router.get(
 );
 //this route above gets the full list of comments 
 //================GET================//
-// router.get(
-//     '/:id' ,
-//     ctrl.getDriver
-// );
-//The route above gets a specific driver for you 
-//'/' means we are starting from the beginnging of the url 
+router.get(
+    '/:id' ,
+    ctrl.getDriver
+);
  //================POST================//
-//  router.post(
-//     '/',
-//     ctrl.createDriver
-// )
+ router.post(
+    '/',
+    ctrl.createDriver
+);
 //================PUT================//
 // router.put(
 //     '/',
 //     ctrl.updateDriver
-// )
+// );
 //================DELETE================//
 // router.delete(
 //     '/',
 //     ctrl.deleteDriver
-// )
+// );
 module.exports = router;
