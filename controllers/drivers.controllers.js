@@ -1,18 +1,6 @@
-// router.get("/", function(req, res, next) {
-//   req.query         // <-- get querystring values such as ?foo=bar
-//   req.params        // <-- get path params such as the "34" in /posts/34/comments
-//   req.body          // <-- get either the json that was posted, or the form values
-//   res.render(...)   // <-- render a template
-//   res.json(...)     // <-- render a JSON response
-//}
-// Controllers typically:
-// Access data from the request
-// Coordinate with other parts of the app (such as models, external services etc...)
-// Instruct the framework
-//on how to generate a response
 const model = require('../models/01_drivers.models');
 
-//function that gets a list pf all DRIVERS 
+//==========================FETCH==========================//
 const fetchDrivers = (request, response) => { 
     let promise = model.fetchDrivers()
 
@@ -23,8 +11,7 @@ const fetchDrivers = (request, response) => {
       next(error)
     })
   };
-
-// //function that gets a specific  driver 
+//==========================GET==========================//
 const getDriver = (request, response, next) => {
   let {id} = request.params;
 
@@ -37,9 +24,8 @@ const getDriver = (request, response, next) => {
     next(error)
   })
 };
-// //function that creates a driver 
+//==========================CREATE==========================//
 const createDriver = (request, response, next) => {
-  
   let promise = model.createDriver(request.body)
 
   promise.then(result => {
@@ -49,9 +35,31 @@ const createDriver = (request, response, next) => {
     next(error)
   })
 };
+// ==========================DELETE==========================//
+const destroyDriver = (request, response, next) => {
+  const promise = model.destroyDriver(request.params.id);
+  promise.then(result => {
+    return result.error ? next(result) : response.status(200).json(result)
+    })
+  promise.catch(error =>{ 
+    next(error)
+  })
+}
+//==========================UPDATE==========================//
+// const updateDriver = (request, response, next) => {
+//   const promise = model.updateDriver(request.params.id, request.body);
+//   promise.then(result => {
+//     return result.error ? next(result) : response.status(200).json(result)
+//     })
+//   promise.catch(error =>{ 
+//     next(error)
+//   })
+// }
 
 module.exports={
     fetchDrivers,
     getDriver, 
-    createDriver 
+    createDriver,
+    destroyDriver,
+    // updateDriver
 };

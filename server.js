@@ -15,8 +15,6 @@ const driversRoutes = require('./routes/drivers.routes')
 const hazardRoutes = require('./routes/hazards.routes');
 const accidentsRoutes = require('./routes/accidents.routes')
 
-
-
 //===============Lets set up routes==========================//
 app.use('/drivers' , driversRoutes)
 app.use('/hazards' , hazardRoutes)
@@ -24,4 +22,5 @@ app.use('/accidents' , accidentsRoutes)
 
 
 //=============Create a route that GETs a collection`=========// 
-app.listen(port,console.log(`you are in port ${port}`));
+app.listen(port,console.log(`Your mom weighs ${port} pounds`));
+    

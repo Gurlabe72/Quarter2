@@ -18,18 +18,40 @@ const createDriver = (driverInfo) => {
     bio: driverInfo.bio 
   })
  .then(result => {
-  return `Welcome to Trucker ${driverInfo.first_name}!` 
+  return {message: `Welcome to Trucker ${driverInfo.first_name}!`}
 })
 .catch(err => {
   return err.message;
 })
 }
+//=================================DELETE=================================/
+const destroyDriver = (id) => {
+  return knex('drivers')
+    .where("id", id)
+    .del()
+    .returning('*')
 
+    .then(result => {
+      console.log(result)
+      return {message: `deleting driver ${result[0].first_name}`}
+    })
+}
 
-
+// const updateDriver = (id, driverInfo) => {
+//   return knex('drivers')
+//     .update(driverInfo)
+//     .where('id', id)
+    
+//     .then(result => {
+//       console.log(result)
+//       return {message: `deleting driver ${result[0].first_name}`}
+//     })
+// }
 
 module.exports = {
    fetchDrivers,
    getDriver,
-   createDriver
+   createDriver,
+   destroyDriver,
+  //  updateDriver
 }
