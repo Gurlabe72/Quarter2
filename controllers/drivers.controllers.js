@@ -23,13 +23,6 @@ const fetchDrivers = (request, response) => {
       next(error)
     })
   };
-  //   const getDriver = (request, response) => {
-  //     console.log(request.params)
-  //     const id = request.params.id
-  //     let promise = model.fetchdrivers
-  //     response.send(`you are getting the ${id}`)
-  // };
-  
 
 // //function that gets a specific  driver 
 const getDriver = (request, response, next) => {
@@ -46,8 +39,8 @@ const getDriver = (request, response, next) => {
 };
 // //function that creates a driver 
 const createDriver = (request, response, next) => {
-  let {body} = request.body;
-  let promise = model.createDriver(body)
+  
+  let promise = model.createDriver(request.body)
 
   promise.then(result => {
     return result.error ? next(result) : response.status(200).json(result)

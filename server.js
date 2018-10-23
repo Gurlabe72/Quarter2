@@ -23,5 +23,5 @@ app.use('/hazards' , hazardRoutes)
 app.use('/accidents' , accidentsRoutes)
 
 
-//=============Create a route that GETs a collection of Pins=========// 
+//=============Create a route that GETs a collection`=========// 
 app.listen(port,console.log(`you are in port ${port}`));

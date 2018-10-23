@@ -23,11 +23,12 @@ const fetchAccidents = (request, response) => {
       console.log(error)
   })
 };
-// const getAccident = (request, response) => {
-//     console.log(request.params)
-//     const id = request.params.id
-//     response.send(`you are getting the ${id}`)
-// };
+const getAccident = (request, response) => {
+    console.log(request.params)
+    const id = request.params.id
+    const commment = request.query.commment
+    response.send(`this is the comment for the #${id} post : ${commment}` )
+};
 // //function that creates an accident report
 // const createAccident = (request, response) => {
 //     response.send(`You have created and accident report`)
@@ -42,6 +43,6 @@ const fetchAccidents = (request, response) => {
 // }
 module.exports = {
     fetchAccidents, 
-    // getAccident, 
+    getAccident, 
     // createAccident, 
 };

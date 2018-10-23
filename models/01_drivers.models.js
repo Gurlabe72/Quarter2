@@ -1,5 +1,5 @@
 const driversQuery = require('../queries/01_drivers.query')
-
+//=================================FETCH=================================/
 const fetchDrivers = () => {
     let drivers = driversQuery.fetchDrivers()
 
@@ -9,7 +9,7 @@ const fetchDrivers = () => {
         : result
     })
 };
-
+//=================================GET=================================/
 const getDriver= (id) => {
  let drivers = driversQuery.getDriver(id)
 
@@ -19,9 +19,9 @@ const getDriver= (id) => {
       : result
   }) 
 };
-
-const createDriver = (body) => {
-  let drivers = driversQuery.createDriver(body)
+//=================================CREATE=================================/
+const createDriver = (driverInfo) => {
+  let drivers = driversQuery.createDriver(driverInfo)
 
   return drivers.then(result => {
       return result.length < 1
@@ -30,30 +30,9 @@ const createDriver = (body) => {
   })
 } ;
 
-// const updateDriver = () => {
-//   drivers = driversQuery.updateDriver()
-
-//   return drivers.then(result => {
-//       return result.length < 1
-//       ? { error: 'error retreiving', status: 404 }
-//       : result
-//   })
-// };
-
-// const deleteDriver = () => {
-//     drivers = driversQuery.deleteDriver()
-  
-//     return drivers.then(result => {
-//         return result.length < 1
-//         ? { error: 'error retreiving', status: 404 }
-//         : result
-//     })
- //};
-
 module.exports = {
   fetchDrivers,
   getDriver,
   createDriver
-  // updateDriver, 
-  // deleteDriver
+
 }  

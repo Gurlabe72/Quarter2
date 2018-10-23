@@ -1,16 +1,17 @@
 const knex = require('./db')
-
+//=================================FETCH=================================/
 const fetchAccidents = () => {
   return knex('accidents')
 }
-
-// const getAccident = () => {
-//   return knex('Accident')
-// }
-
-
+//=================================GET=================================/
+const getAccident = (id) => {
+  return knex('drivers')
+     .select('hazards.comment')
+      .where('id',id);
+}
+//=================================CREATE=================================/
 module.exports = {
-fetchAccidents
-//   getAccident,
-//   createAccident,
+fetchAccidents,
+getAccident
+ // createAccident,
  }

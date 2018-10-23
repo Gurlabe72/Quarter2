@@ -12,25 +12,15 @@ router.get(
 );
 //this route above gets the full list of comments
 //================GET================//
-// router.get(
-//     '/:id' ,
-//     ctrl.getAccident
-// );
-// //The route above gets a specific driver for you 
-// //'/' means we are starting from the beginnging of the url 
+router.get(
+    '/:id' ,
+    ctrl.getAccident
+);
+
 // //================POST================//
 // router.post(
 //     '/',
 //     ctrl.createAccident
 // )
-// //================PUT================//
-// router.put(
-//     '/',
-//     ctrl.updateAccident
-// )
-// //================DELETE================//
-// router.delete(
-//     '/',
-//     ctrl.deleteAccident
-// )
+
  module.exports = router;

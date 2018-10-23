@@ -24,12 +24,12 @@ const fetchHazards = (request, response) => {
             console.log(error)
         }) 
 };
-// const getHazard = (request, response) => {
-//     console.log(request.params)
-//     const id = request.params.id
-//     let promise = model.fetchHazards
-//     response.send(`you are getting the ${id}`)
-// };
+const getHazard = (request, response) => {
+    console.log(request.params)
+    const id = request.params.id
+    let promise = model.fetchHazards
+    response.send(`you are getting the ${id}`)
+};
 
 
 //Function that gets a specific HAZARD for you 
@@ -45,8 +45,8 @@ const fetchHazards = (request, response) => {
 //     response.send(`You are deleting a Hazard`)
 // }
 module.exports = {
-    fetchHazards  
-    // getHazard, 
+    fetchHazards,  
+    getHazard       
     // createHazard, 
   
 };

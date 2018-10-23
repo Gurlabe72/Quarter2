@@ -13,10 +13,10 @@ const getDriver = (id) => {
 const createDriver = (driverInfo) => {
   return knex('drivers')
   .insert ({
-    first_name: driverInfo.first_name,
-    last_name: driverInfo.last_name,
-    bio: driverInfo.bio,
- })
+    first_name: driverInfo.firstName,
+    last_name: driverInfo.lastName,
+    bio: driverInfo.bio 
+  })
  .then(result => {
   return `Welcome to Trucker ${driverInfo.first_name}!` 
 })
@@ -31,7 +31,5 @@ const createDriver = (driverInfo) => {
 module.exports = {
    fetchDrivers,
    getDriver,
-  createDriver
-//   updateDriver,
-//   deleteDriver
+   createDriver
 }

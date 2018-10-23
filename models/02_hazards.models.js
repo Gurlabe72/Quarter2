@@ -9,16 +9,16 @@ const fetchHazards = () => {
         : result
     })
 };
-//=================================GET=================================/
-// const getHazard = () => {
-//     hazards = hazardsQuery.getHazard()
-
-//     return hazards.then(result => {
-//         return result.length < 1
-//         ? { error: 'error retreiving ', status: 404 }
-//         : result
-//     }) 
-// }
+//=================================GET=================================//
+const getHazard= (id) => {
+    let hazardss = hazardssQuery.getHazard(id)
+   
+     return hazards.then(result => {
+         return result.length < 1
+         ? { error: 'error retreiving ', status: 404 }
+         : result
+     }) 
+   };
 //=================================CREATE=================================/
 // const createHazard = () => {
 //   hazards = hazardsQuery.createHazard()
@@ -34,7 +34,7 @@ const fetchHazards = () => {
 
 
 module.exports = { 
-   fetchHazards
-//   getHazard,
+   fetchHazards,
+   getHazard
 //   createHazard, 
 }  

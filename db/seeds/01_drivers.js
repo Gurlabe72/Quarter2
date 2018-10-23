@@ -34,5 +34,9 @@ exports.seed = function(knex, Promise) {
 
         ])
       })
-  
+      .then(() =>
+      knex.raw(
+        `SELECT setval('"drivers_id_seq"', (SELECT MAX("id") FROM "drivers"))`
+      )
+    )
   }

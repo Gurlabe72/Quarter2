@@ -10,7 +10,6 @@ router.get(
     '/' ,
     ctrl.fetchDrivers 
 );
-//this route above gets the full list of comments 
 //================GET================//
 router.get(
     '/:id' ,
@@ -21,14 +20,5 @@ router.get(
     '/',
     ctrl.createDriver
 );
-//================PUT================//
-// router.put(
-//     '/',
-//     ctrl.updateDriver
-// );
-//================DELETE================//
-// router.delete(
-//     '/',
-//     ctrl.deleteDriver
-// );
+
 module.exports = router;

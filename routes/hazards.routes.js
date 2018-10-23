@@ -11,27 +11,15 @@ router.get(
     '/' , 
     ctrl.fetchHazards
 );
-//The route above gets a specific hazards. 
-//'/' means we are starting from the beginnging of the url 
 //================GET================//
-// router.get( 
-//     '/:id' , 
-//     ctrl.getHazards  
-// );
- //this route above gets the full list of hazards 
+router.get( 
+    '/:id' , 
+    ctrl.getHazard   
+);
 // //================POST================//
 // router.post(
 //     '/',
-//     ctrl.createHazards
+//     ctrl.createHazard
 // )
-//================PUT================//
-// router.put(
-//     '/',
-//     ctrl.updateHazards   
-// )
-// //================DELETE================//
-// router.delete(
-//     '/',
-//     ctrl.deleteHazards
-// )
+
 module.exports = router;
