@@ -5,15 +5,17 @@ const fetchAccidents = () => {
 }
 //=================================GET=================================/
 const getAccident = (id) => {
-  return knex('drivers')
-     .select('accidents.comment')
+  return knex('accidents')
+     .select('accidents.hazards_id','accidents.comment')
       .where('id',id);
 }
 //=================================CREATE=================================/
 const createAccident = (accidentInfo) => {
-  return knex('drivers')
+  console.log(accidentInfo)
+  return knex('accidents')
   .insert ({
-    first_name: accidentInfo.comment,
+    hazards_id: accidentInfo.hazards_id,
+    comment: accidentInfo.comment
   })
  .then(result => {
   return {message: `The comment ${accidentInfo.comment} has been posted`}

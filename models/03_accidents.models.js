@@ -10,8 +10,8 @@ const fetchAccidents = () => {
   })
 };
 //=================================GET=================================/
-const getAccident= () => {
-  hazards = hazardsQuery.getAccident()
+const getAccident= (id) => {
+  hazards = hazardsQuery.getAccident(id)
 
   return accidents.then(result => {
       return result.length < 1
@@ -20,8 +20,8 @@ const getAccident= () => {
   }) 
 }
 //=================================UPDATE=================================/
-const createAccident = () => {
-  accidents = accidentsQuery.createAccident()
+const createAccident = (accidentInfo) => {
+  accidents = accidentsQuery.createAccident(accidentInfo)
 
   return accidents.then(result => {
       return result.length < 1
@@ -29,10 +29,6 @@ const createAccident = () => {
       : result
   })
 } ;
-
-
-
-
 
 
  module.exports = {
