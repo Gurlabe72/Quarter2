@@ -12,29 +12,33 @@ const fetchHazards = (request, response) => {
             console.log(error)
         }) 
 };
-const getHazard = (request, response) => {
-    console.log(request.params)
-    const id = request.params.id
-    let promise = model.fetchHazards
-    response.send(`you are getting the ${id}`)
-};
+    const getHazard = (request, response, next) => {
+        let {id} = request.params;
+      
+        let promise = model.getHazard(id)
+      
+        promise.then(result => {
+          return result.error ? next(result) : response.status(200).json(result)
+        })
+        promise.catch(error => {
+          next(error)
+        })
+      };
 
+//==========================CREATE==========================//
+const createHazard = (request, response, next) => {
+    let promise = model.createHazard(request.body)
+  
+    promise.then(result => {
+      return result.error ? next(result) : response.status(200).json(result)
+    })
+    promise.catch(error => {
+      next(error)
+    })
+  };
 
-//Function that gets a specific HAZARD for you 
-
-
-
-// //function that updates a current hazard 
-// const updateHazard = (request, response) => {
-//     response.send(`You are updating a Hazard`)
-// }
-// //function that deletes a hazard. 
-// const deleteHazard = (request, response) => {
-//     response.send(`You are deleting a Hazard`)
-// }
 module.exports = {
     fetchHazards,  
-    getHazard       
-    // createHazard, 
-  
+    getHazard,       
+    createHazard
 };

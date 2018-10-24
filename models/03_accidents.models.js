@@ -19,16 +19,16 @@ const getAccident= () => {
       : result
   }) 
 }
-//=================================FETCH=================================/
-// const createAccident = () => {
-//   accidents = accidentsQuery.createAccident()
+//=================================UPDATE=================================/
+const createAccident = () => {
+  accidents = accidentsQuery.createAccident()
 
-//   return accidents.then(result => {
-//       return result.length < 1
-//       ? { error: 'error retreiving', status: 404 }
-//       : result
-//   })
-// } ;
+  return accidents.then(result => {
+      return result.length < 1
+      ? { error: 'error retreiving', status: 404 }
+      : result
+  })
+} ;
 
 
 
@@ -37,6 +37,6 @@ const getAccident= () => {
 
  module.exports = {
 fetchAccidents,
-getAccident
-//createAccident, 
+getAccident,
+createAccident
 }  

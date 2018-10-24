@@ -56,10 +56,10 @@ const destroyDriver = (request, response, next) => {
 //   })
 // }
 
-module.exports={
+module.exports= {
     fetchDrivers,
     getDriver, 
     createDriver,
-    destroyDriver,
+    destroyDriver
     // updateDriver
 };

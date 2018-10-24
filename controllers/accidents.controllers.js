@@ -1,5 +1,5 @@
 const model = require('../models/03_accidents.models');
-//function that gets a list of all Accident 
+//==========================FETCH==========================//
 const fetchAccidents = (request, response) => { 
   let payload = request.body 
   let promise = model.fetchAccidents(payload);
@@ -11,16 +11,30 @@ const fetchAccidents = (request, response) => {
       console.log(error)
   })
 };
-const getAccident = (request, response) => {
-    console.log(request.params)
-    const id = request.params.id
-    const commment = request.query.commment
-    response.send(`this is the comment for the #${id} post : ${commment}` )
-};
-// //function that creates an accident report
-// const createAccident = (request, response) => {
-//     response.send(`You have created and accident report`)
-// };
+//==========================GET==========================//
+const getAccident = (request, response, next) => {
+    let {id} = request.params;
+  
+    let promise = model.getAccident(id)
+  
+    promise.then(result => {
+      return result.error ? next(result) : response.status(200).json(result)
+    })
+    promise.catch(error => {
+      next(error)
+    })
+  };
+  //==========================CREATE==========================//
+  const createAccident = (request, response, next) => {
+    let promise = model.createAccident(request.body)
+  
+    promise.then(result => {
+      return result.error ? next(result) : response.status(200).json(result)
+    })
+    promise.catch(error => {
+      next(error)
+    })
+  };
 // //function that updates an accident report 
 // const updateAccident = ( request, response) => {
 //     response.send(`You have updated an accident report`)
@@ -32,5 +46,5 @@ const getAccident = (request, response) => {
 module.exports = {
     fetchAccidents, 
     getAccident, 
-    // createAccident, 
+    createAccident, 
 };

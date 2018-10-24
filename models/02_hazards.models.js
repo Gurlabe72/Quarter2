@@ -20,21 +20,21 @@ const getHazard= (id) => {
      }) 
    };
 //=================================CREATE=================================/
-// const createHazard = () => {
-//   hazards = hazardsQuery.createHazard()
+const createHazard = (id) => {
+  hazards = hazardsQuery.createHazard(id)
 
-//   return hazards.then(result => {
-//       return result.length < 1
-//       ? { error: 'error retreiving', status: 404 }
-//       : result
-//   })
-// } ;
+  return hazards.then(result => {
+      return result.length < 1
+      ? { error: 'error retreiving', status: 404 }
+      : result
+  })
+} ;
 
 
 
 
 module.exports = { 
    fetchHazards,
-   getHazard
-//   createHazard, 
+   getHazard,
+   createHazard 
 }  

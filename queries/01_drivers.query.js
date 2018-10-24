@@ -18,7 +18,7 @@ const createDriver = (driverInfo) => {
     bio: driverInfo.bio 
   })
  .then(result => {
-  return {message: `Welcome to Trucker ${driverInfo.first_name}!`}
+  return {message: `Welcome to Trucker ${driverInfo.firstName}!`}
 })
 .catch(err => {
   return err.message;
@@ -33,7 +33,7 @@ const destroyDriver = (id) => {
 
     .then(result => {
       console.log(result)
-      return {message: `deleting driver ${result[0].first_name}`}
+      return {message: `deleting driver ${result[0].firstName}`}
     })
 }
 
@@ -52,6 +52,6 @@ module.exports = {
    fetchDrivers,
    getDriver,
    createDriver,
-   destroyDriver,
+   destroyDriver
   //  updateDriver
 }

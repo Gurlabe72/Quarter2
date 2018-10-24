@@ -39,7 +39,7 @@ const destroyDriver = (id) => {
     });
 }
 //==========================UPDATE==========================//
-// const updateDriver = (id, driverInfo) => {
+//const updateDriver = (id, driverInfo) => {
 //     const drivers = driversQuery.updateDriver(id, driverInfo);
 //     return drivers.then(result => {
 //         return result.length < 1 ?
@@ -55,5 +55,5 @@ fetchDrivers,
 getDriver,
 createDriver,
 destroyDriver,
-// updateDriver
+//updateDriver
 }  
