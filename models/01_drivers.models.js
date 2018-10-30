@@ -21,7 +21,7 @@ const getDriver= (id) => {
 };
 //=================================CREATE=================================/
 const createDriver = (driverInfo) => {
-  let drivers = driversQuery.createDriver(driverInfo)
+drivers = driversQuery.createDriver(driverInfo)
 
   return drivers.then(result => {
       return result.length < 1
@@ -39,14 +39,14 @@ const destroyDriver = (id) => {
     });
 }
 //==========================UPDATE==========================//
-//const updateDriver = (id, driverInfo) => {
-//     const drivers = driversQuery.updateDriver(id, driverInfo);
-//     return drivers.then(result => {
-//         return result.length < 1 ?
-//         { error: 'error updating driver', status: 400 } :
-//         result
-//     })
-// }
+const updateDriver = (id, driverInfo) => {
+    const drivers = driversQuery.updateDriver(id, driverInfo);
+    return drivers.then(result => {
+        return result.length < 1 ?
+        { error: 'error updating driver', status: 400 } :
+        result
+    })
+}
 
 
 

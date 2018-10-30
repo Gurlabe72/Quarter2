@@ -13,7 +13,7 @@ exports.seed = function(knex, Promise) {
           },
           {
             id: 2,
-            first_name:'Gurlabe ',
+            first_name:'Gurlabe',
             last_name:'Dhaliwal',
             bio:'this is my bio',
 

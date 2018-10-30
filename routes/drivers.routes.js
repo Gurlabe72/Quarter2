@@ -11,5 +11,6 @@ router.get('/:id',  ctrl.getDriver);
 //================DELETE================//
 router.delete('/:id', ctrl.destroyDriver);
 //================UPDATE ================//
-// router.put('/:id',ctrl.updateDriver) 
+router.put('/:id',ctrl.updateDriver) 
+
 module.exports = router;

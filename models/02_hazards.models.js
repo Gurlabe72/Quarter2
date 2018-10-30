@@ -11,7 +11,7 @@ const fetchHazards = () => {
 };
 //=================================GET=================================//
 const getHazard= (id) => {
-    let hazardss = hazardssQuery.getHazard(id)
+    let hazards = hazardsQuery.getHazard(id)
    
      return hazards.then(result => {
          return result.length < 1
@@ -20,8 +20,8 @@ const getHazard= (id) => {
      }) 
    };
 //=================================CREATE=================================/
-const createHazard = (id) => {
-  hazards = hazardsQuery.createHazard(id)
+const createHazard = (hazardInfo) => {
+  hazards = hazardsQuery.createHazard(hazardInfo)
 
   return hazards.then(result => {
       return result.length < 1
@@ -29,12 +29,31 @@ const createHazard = (id) => {
       : result
   })
 } ;
-
+//==========================DELETE==========================//
+const destroyHazard = (id) => {
+    const hazards = hazardsQuery.destroyHazard(id);
+    return drivers.then(result => {
+        return result.length < 1 ?
+        { error: 'error deleting', status: 400 } :
+        result
+    });
+}
+//==========================UPDATE==========================//
+const updateHazard = (id, hazardInfo) => {
+    const hazards = hazardsQuery.updatehazard(id, hazardInfo);
+    return hazards.then(result => {
+        return result.length < 1 ?
+        { error: 'error updating hazard', status: 400 } :
+        result
+    })
+}
 
 
 
 module.exports = { 
    fetchHazards,
    getHazard,
-   createHazard 
+   createHazard,
+   destroyHazard,
+   updateHazard 
 }  

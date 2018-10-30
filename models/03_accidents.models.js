@@ -19,7 +19,7 @@ const getAccident= (id) => {
       : result
   }) 
 }
-//=================================UPDATE=================================/
+//=================================CREATE=================================/
 const createAccident = (accidentInfo) => {
   accidents = accidentsQuery.createAccident(accidentInfo)
 
@@ -29,10 +29,28 @@ const createAccident = (accidentInfo) => {
       : result
   })
 } ;
-
+//==========================DELETE==========================//
+const destroyAccident = (id) => {
+  const accidents = accidentsQuery.destroyAccident(id);
+  return accidents.then(result => {
+      return result.length < 1 ?
+      { error: 'error deleting', status: 400 } :
+      result
+  });
+}
+//==========================UPDATE==========================//
+const updateAccident = (id, accidentInfo) => {
+  const accidents = accidentsQuery.updateAccident(id, accidentInfo);
+  return accidents.then(result => {
+      return result.length < 1 ?
+      { error: 'error updating accident', status: 400 } :
+      result
+  })
+}
 
  module.exports = {
 fetchAccidents,
 getAccident,
-createAccident
+createAccident,
+destroyAccident
 }  

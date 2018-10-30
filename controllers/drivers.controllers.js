@@ -46,20 +46,20 @@ const destroyDriver = (request, response, next) => {
   })
 }
 //==========================UPDATE==========================//
-// const updateDriver = (request, response, next) => {
-//   const promise = model.updateDriver(request.params.id, request.body);
-//   promise.then(result => {
-//     return result.error ? next(result) : response.status(200).json(result)
-//     })
-//   promise.catch(error =>{ 
-//     next(error)
-//   })
-// }
+const updateDriver = (request, response, next) => {
+  const promise = model.updateDriver(request.params.id, request.body);
+  promise.then(result => {
+    return result.error ? next(result) : response.status(200).json(result)
+    })
+  promise.catch(error =>{ 
+    next(error)
+  })
+}
 
 module.exports= {
     fetchDrivers,
     getDriver, 
     createDriver,
-    destroyDriver
-    // updateDriver
+    destroyDriver,
+    updateDriver
 };

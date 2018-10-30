@@ -35,23 +35,26 @@ const destroyDriver = (id) => {
       console.log(result)
       return {message: `deleting driver ${result[0].firstName}`}
     })
+    .catch(err => {
+      return err.message;
+    })
 }
-
-// const updateDriver = (id, driverInfo) => {
-//   return knex('drivers')
-//     .update(driverInfo)
-//     .where('id', id)
+//===============================UPDATE===============================//
+const updateDriver = (id, driverInfo) => {
+  return knex('drivers')
+    .update(driverInfo)
+    .where('id', id)
     
-//     .then(result => {
-//       console.log(result)
-//       return {message: `deleting driver ${result[0].first_name}`}
-//     })
-// }
+    .then(result => {
+      console.log(result)
+      return {message: `updating driver ${result[0].first_name}`}
+    })
+}
 
 module.exports = {
    fetchDrivers,
    getDriver,
    createDriver,
-   destroyDriver
-  //  updateDriver
+   destroyDriver,
+   updateDriver
 }

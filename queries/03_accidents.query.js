@@ -25,9 +25,35 @@ const createAccident = (accidentInfo) => {
 })
 }
 //=================================DELETE=================================//
+const destroyAccident = (id) => {
+  return knex('accidents')
+    .where("id", id)
+    .del()
+    .returning('*')
 
+    .then(result => {
+      console.log(result)
+      return {message: `deleting your comment ${result[0].comment}`}
+    })
+    .catch(err => {
+      return err.message;
+    })
+}
+//===============================UPDATE===============================//
+const updateAccident = (id, accidentInfo) => {
+  return knex('accident')
+    .update(accidentInfo)
+    .where('id', id)
+    
+    .then(result => {
+      console.log(result)
+      return {message: `updating accident ${result[0].comment}`}
+    })
+}
 module.exports = {
 fetchAccidents,
 getAccident,
-createAccident
- }
+createAccident,
+destroyAccident,
+updateAccident
+}
